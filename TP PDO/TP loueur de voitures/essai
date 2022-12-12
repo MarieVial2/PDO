@@ -1,0 +1,12 @@
+foreach ($tableau as $key => $value) {
+                            if ($valeur['idVoiture'] == $value['idVoiture']) {
+                        ?>
+                            <li>
+                                <p>Immatriculation :<?= $value['immatriculation'] ?></p>
+                                <p>Marque :<?= $value['marque'] ?></p>
+                                <p>Modele :<?= $value['modele'] ?></p>
+                                <p>Année :<?= $value['annee'] ?></p>
+                                <p>Image :<?= $value['image'] ?></p>
+                            </li>
+                        <?php
+                        }}

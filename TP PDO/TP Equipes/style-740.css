@@ -1,0 +1,15 @@
+nav {
+    
+    height : 100px;
+    
+}
+
+nav ul {
+    flex-direction: column;
+    text-align : center;
+    padding-left : 0;
+}
+
+nav ul li a {
+    font-size: 15px;
+}

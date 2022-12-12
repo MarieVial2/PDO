@@ -1,0 +1,41 @@
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=jeuxvideos;port=3306', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sth = $pdo->prepare("SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'users'");
+    $sth->execute();
+    $table_infos = $sth->fetchAll();
+
+    
+
+    
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
+}
+
+
+    for($i = 0; $i < count($table_infos); $i++) {
+
+    if (in_array("login", $table_infos[$i]) || in_array("password", $table_infos[$i])) {
+        var_dump($table_infos[$i]);
+
+    
+    } else {
+        try {
+            $pdo = new PDO('mysql:host=localhost;dbname=jeuxvideos;port=3306', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+            $sth = $pdo->prepare("ALTER TABLE users ADD `login` VARCHAR(50)");
+            $sth->execute();
+           
+            $sth2 = $pdo->prepare("ALTER TABLE users ADD `password` VARCHAR(50)");
+            $sth2->execute();
+            
+        
+            
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
+    }
+}
+

@@ -1,0 +1,234 @@
+body {
+    font-family: 'Montserrat';
+}
+
+header {
+    background-origin: border-box;
+    background: linear-gradient(0.25turn, rgba(77, 77, 77, 0.427), rgba(0, 0, 0, 0.486)), url('../images/equipe.jpeg');
+    background-position: top -250px left 0px;
+    background-size: cover;
+    height : 500px;
+    position: relative;
+    
+}
+
+nav {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    height : 70px;
+    width : 50vw;
+    background-color: white;
+    position : absolute;
+    bottom : 40px;
+    left: 25vw;
+    border-radius: 15px;
+    font-family: 'Rubik Spray Paint';
+    font-size: 20px;
+}
+
+
+nav ul {
+    display : flex;
+    margin: 0;
+    
+
+}
+nav ul li {
+    list-style-type: none;
+    padding : 0 20px;
+    height : 70px;
+    display : flex;
+    align-items: center;
+
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color : black;
+    /* height: 70px; */
+}
+
+nav ul li a:hover {
+    height: 70px;
+    background: linear-gradient(rgba(79, 79, 79, 0.498), rgba(36, 36, 36, 0.215));
+    color: white;
+    /* inline-size: 70px; */
+    display : flex; 
+     align-items: center;
+    justify-content: center; 
+    /* padding: 0 5px; */
+    /* width : 5vw; */
+    /* padding : 0 5px; */
+}
+
+/* .dropdown-item:hover {
+    background: white;
+    /* justify-content: flex-start; */
+    /* color: black;
+    padding : 0;
+}  */
+
+.dropdown-item:focus {
+    background-color: white;
+} 
+
+
+
+
+/* .dropdown {
+    display : flex;
+}
+
+.dropdown-menu li a:hover{
+    padding : 0;
+    
+} */
+
+#diviser {
+    border-bottom : 1px solid grey;
+    height : 70px;
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.dropdown-toggle {
+    color : black;
+}
+
+.dropdown-toggle:hover {
+    color: white;
+}
+
+input[type=submit] {
+    border : none;
+    background-color: rgba(240, 248, 255, 0);
+    
+}
+
+input[type=submit]:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+/* FOOTER---------------------------------------------------- */
+
+footer {
+    height : 250px;
+    background-color: rgb(92, 92, 92);
+    color : white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+
+footer h4{
+    margin-top : 40px;
+}
+
+footer .copyright {
+    color: white;
+    text-align: center;
+
+}
+
+footer a:hover { 
+    color: black;
+}
+
+
+/* INDEX----------------------------------------------- */
+/* #main {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas : 
+    "img titre titre"
+    "img texte texte"
+    "texte texte texte";
+    /* "texte texte texte"
+    "texte texte texte"; */
+/* }
+
+#main img{
+    grid-area : img;
+}
+
+#main h4 {
+    grid-area : titre;
+}
+
+#main p {
+    grid-area : texte;
+} */ 
+
+#main img {
+    float: left;
+    margin : 20px;
+}
+
+.container {
+    margin-top : 80px;
+    /* padding : 30px; */
+    /* width : 100vw; */
+}
+
+#main h4 {
+    text-align: center;
+    margin : 40px;
+    font-size: 30px;
+    font-family: 'Rubik Spray Paint';
+}
+
+#main p {
+    text-align: justify;
+}
+
+/* FORM------------------------------- */
+form {
+    display : flex;
+    flex-direction: column;
+}
+label{
+    margin-top : 10px;
+}
+
+form input, form textarea {
+    margin-top : 15px;
+}
+
+form textarea{
+    margin-bottom : 10px;
+}
+
+.container h3 {
+    text-align: center;
+}
+
+
+/* SECTION_PRESENTATION ----------------------------------------- */
+#photo_section {
+    height :200px;
+    width : 350px;
+    margin : 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#presentation p {
+    text-align: justify;
+}
+

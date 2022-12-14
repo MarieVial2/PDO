@@ -103,13 +103,13 @@ nav ul li a:hover {
     color: white;
 }
 
-input[type=submit] {
+li input[type=submit] {
     border : none;
     background-color: rgba(240, 248, 255, 0);
     
 }
 
-input[type=submit]:focus {
+li input[type=submit]:focus {
     background-color: rgb(255, 255, 255);
 }
 
@@ -211,6 +211,10 @@ form textarea{
     text-align: center;
 }
 
+form p {
+    color: red;
+}
+
 
 /* SECTION_PRESENTATION ----------------------------------------- */
 #photo_section {
@@ -221,6 +225,10 @@ form textarea{
     border: 1px solid black;
 }
 
+h4 {
+    text-align : center;
+}
+
 #presentation {
     display: flex;
     flex-direction: column;
@@ -228,7 +236,49 @@ form textarea{
     align-items: center;
 }
 
+#modify {
+    display : flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
 #presentation p {
     text-align: justify;
 }
 
+#cartes {
+    display: flex;
+    flex-wrap : wrap;
+    justify-content: center;
+}
+
+.carte {
+    width : 20vw;
+    padding : 20px;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 202);
+    margin : 10px;
+    border-radius: 5px;
+    border : 1px solid black;
+}
+
+.photo_licencie {
+    width : 12vw;
+    height : 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    border : 1px solid black;
+    margin : 15px;
+}
+
+.carte p {
+    align-items: justify;
+}
+
+button {
+    width : 50px;
+}

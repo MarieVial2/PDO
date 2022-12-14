@@ -2,7 +2,6 @@
 
 include('assets/header.php');
 
-
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["photoToUpload"]["name"]);
 $uploadOk = 1;
@@ -46,35 +45,49 @@ if ($uploadOk == 0) {
     }
 
 
-    $pdo = new PDO('mysql:host=localhost;dbname=omnisport;port=3306','root','',
-array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+$newnom = $_POST['nom_section'];
+$newsport = $_POST['sport'];
+$newdescription = $_POST['description_section'];
+$newphoto = 'uploads/'. $_FILES['photoToUpload']['name'];
 
-if ($_POST) {
-
-    $nom_licencie = $_POST['nom_licencie'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $age = $_POST['age'];
-    $description_licencie = $_POST['description_licencie'];
-    $photo = 'uploads/'. $_FILES['photoToUpload']['name'];
-    $password = $_POST['password'];
-    $id_section = $_POST['section_id'];
-
-
-    if ($nom_licencie != "") {
-        $req1 = $pdo->prepare("
-        INSERT INTO licencie (nom_licencie, prenom, email, age, description_licencie, photo, password, id_section)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+$id=$_POST['id'];
+if (!empty($_FILES['photoToUpload']['name'])) {
+    try{
+        $pdo = new PDO('mysql:host=localhost;dbname=omnisport;port=3306', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //On prépare la requête et on l'exécute
+        $sth = $pdo->prepare("
+        UPDATE section
+        SET photo_section='$newphoto'
+        WHERE id_section = $id
         ");
-        $req1->execute([$nom_licencie, $prenom, $email, $age, $description_licencie, $photo, $password, $id_section]);
         
-
+        $sth->execute();
+        
+    
+        }
+        catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+        }
 }
-}
 
+try{
+    $pdo = new PDO('mysql:host=localhost;dbname=omnisport;port=3306', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //On prépare la requête et on l'exécute
+    $sth = $pdo->prepare("
+    UPDATE section
+    SET nom_section='$newnom', sport='$newsport', description_section='$newdescription'
+    WHERE id_section = $id
+    ");
+    
+    $sth->execute();
+    
 
-
-
+    }
+    catch(PDOException $e){
+    echo "Erreur : " . $e->getMessage();
+    }
 
 include('assets/footer.php');
 

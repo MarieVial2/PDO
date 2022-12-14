@@ -2,6 +2,17 @@
 
 include('assets/header.php');
 
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=omnisport;port=3306', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sth = $pdo->prepare("SELECT * FROM section");
+    $sth->execute();
+    $tableau = $sth->fetchAll();
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
+}
+
 ?>
 
 
@@ -28,6 +39,16 @@ include('assets/header.php');
                 <label for="description_licencie">Description:</label>
                 <textarea name="description_licencie" id="description_licencie" cols="30" rows="10"></textarea>
 
+                <label for="section_id">Equipe :</label>
+                <select name="section_id" id="section_id">
+                        <option disabled> --Choisissez une section--</option>
+                        <?php foreach ($tableau as $cle => $valeur) { ?>
+                        <option value="<?=$valeur['id_section']?>"><?=$valeur['nom_section']. " - ". $valeur['sport']?></option>
+                        <?php
+                        }
+                        ?>
+                </select>
+                
 
                 <label for="photoToUpload">Photo :</label>
                 <input type="file" name="photoToUpload" id="photoToUpload">

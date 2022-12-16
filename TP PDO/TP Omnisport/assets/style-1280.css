@@ -1,0 +1,30 @@
+header {
+    height : 450px;
+}
+
+nav {
+    width : 80vw;
+    /* font-size : 0.8em; */
+    left : 10vw;
+}
+
+nav ul li {
+    padding : 0 5px;
+    height : 50px;
+}
+
+nav ul li {
+    font-size : 0.8em;
+}
+
+.dropdown-menu li a:hover {
+    height: 50px;
+}
+
+#diviser{
+    height : 50px;
+}
+
+.carte {
+    width : 35vw;
+}

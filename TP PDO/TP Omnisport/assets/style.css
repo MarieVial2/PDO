@@ -5,7 +5,7 @@ body {
 header {
     background-origin: border-box;
     background: linear-gradient(0.25turn, rgba(77, 77, 77, 0.427), rgba(0, 0, 0, 0.486)), url('../images/equipe.jpeg');
-    background-position: top -250px left 0px;
+    background-position: top -20vh left 0;
     background-size: cover;
     height : 500px;
     position: relative;
@@ -17,14 +17,15 @@ nav {
     justify-content: space-between;
     align-items: center;
     height : 70px;
-    width : 50vw;
+    width : 60vw;
     background-color: white;
     position : absolute;
     bottom : 40px;
-    left: 25vw;
+    left: 20vw;
     border-radius: 15px;
     font-family: 'Rubik Spray Paint';
     font-size: 20px;
+    font-size: 1em;
 }
 
 
@@ -48,6 +49,10 @@ nav ul li a {
     text-decoration: none;
     color : black;
     /* height: 70px; */
+
+    display : flex; 
+     align-items: center;
+    justify-content: center; 
 }
 
 nav ul li a:hover {
@@ -63,6 +68,12 @@ nav ul li a:hover {
     /* padding : 0 5px; */
 }
 
+nav ul li p {
+    margin-right : 10px;
+    margin-bottom : 0;
+    color: rgb(155, 155, 155);
+}
+
 /* .dropdown-item:hover {
     background: white;
     /* justify-content: flex-start; */
@@ -75,7 +86,10 @@ nav ul li a:hover {
 } 
 
 
-
+#diviser:hover {
+    display: flex;
+    justify-content: center;
+}
 
 /* .dropdown {
     display : flex;
@@ -113,6 +127,8 @@ li input[type=submit]:focus {
     background-color: rgb(255, 255, 255);
 }
 
+
+
 /* FOOTER---------------------------------------------------- */
 
 footer {
@@ -125,11 +141,13 @@ footer a {
     color: white;
     text-decoration: none;
     font-size: 15px;
+    transition: 1s;
     
 }
 
 footer h4{
     margin-top : 40px;
+    text-align: left;
 }
 
 footer .copyright {
@@ -142,6 +160,10 @@ footer a:hover {
     color: black;
 }
 
+footer i {
+    margin : 10px;
+    font-size: 25px;
+}
 
 /* INDEX----------------------------------------------- */
 /* #main {
@@ -282,3 +304,53 @@ h4 {
 button {
     width : 50px;
 }
+
+/* FORUM---------------------------------- */
+
+.carte_forum {
+    width : 30vw;
+    background-color: rgb(206, 206, 206);
+    padding : 20px;
+    margin : 20px;
+    border-radius: 5px;
+}
+
+#cartes_wrap {
+    display : flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width : 50px;
+    height : 50px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+ h6 {
+    font-size : 11px;
+    font-style: italic;
+}
+
+.carte_forum p {
+    font-size : 13px;
+}
+
+.carte_forum button {
+    width : auto;
+    background-color:rgb(206, 206, 206) ;
+    border : none;
+    text-align: left;
+}
+
+.message_display h4 {
+    text-align: left;
+}
+
+.message_display {
+    width : 75vw;
+    
+}
+

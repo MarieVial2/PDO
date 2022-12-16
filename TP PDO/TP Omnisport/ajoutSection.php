@@ -4,7 +4,10 @@ include('assets/header.php');
 
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["photoToUpload"]["name"]);
+$target_name = str_replace(" ", "_", basename($_FILES["photoToUpload"]["name"]));
+$target_name = str_replace("(", "-", $target_name);
+$target_name = str_replace(")", "-", $target_name);
+$target_file = $target_dir . $target_name;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image

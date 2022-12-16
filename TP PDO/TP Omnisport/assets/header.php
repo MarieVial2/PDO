@@ -27,7 +27,12 @@ try {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+   
     <link rel="stylesheet" href="assets/style.css">
+     <link rel="stylesheet" media="screen and (max-width: 1280px) and (min-width: 820px)" href="assets/style-1280.css" />
+     <link rel="stylesheet" media="screen and (max-width: 820px) and (min-width: 620px)" href="assets/style-820.css" />
+     <link rel="stylesheet" media="screen and (max-width: 620px) and (min-width: 320px)" href="assets/style-620.css" />
     <script src="https://kit.fontawesome.com/dcef3565c8.js" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
@@ -91,7 +96,7 @@ try {
             <ul>
                 <li><?php 
                 if (isset($_SESSION['nom'])) {
-                    echo $_SESSION['nom']." ". $_SESSION['prenom'];
+                    echo "<p>".$_SESSION['nom']." ". $_SESSION['prenom']. "</p>";
                     echo '<form action="deconnexion.php" method="POST">
 
                     <input type="submit" value="Déconnexion"></form>';

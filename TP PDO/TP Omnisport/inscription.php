@@ -19,7 +19,7 @@ try {
 <div class="container">
     <div class="row">
         <div class="offset-md-4 col-md-4">
-            <h3>Ajouter une section :</h3>
+            <h3>Ajouter un licencié :</h3>
             <form action="ajoutMembre.php" method="POST" enctype="multipart/form-data">
 
                 <label for="nom">Nom :</label>

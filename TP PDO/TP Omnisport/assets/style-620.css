@@ -1,0 +1,78 @@
+header {
+    height : 250px;
+    background-position: center;
+}
+
+nav {
+    width : 80vw;
+    /* font-size : 0.8em; */
+    left : 10vw;
+    bottom : 40px;
+    flex-direction: column;
+    justify-content: center;
+    height : 90px;
+}
+
+.main {
+    padding : 0;
+}
+
+nav ul {
+    padding : 0;
+}
+
+nav ul li {
+    padding : 0 5px;
+    height : 50px;
+}
+
+nav ul li {
+    font-size : 0.8em;
+}
+
+.dropdown-menu li a:hover {
+    height: 50px;
+}
+
+#diviser{
+    height : 50px;
+}
+
+nav ul li a:hover {
+    height: 30px;
+    background :rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display : flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.dropdown-toggle:hover {
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    height : 450px;
+}
+
+footer a:hover { 
+    color: rgb(255, 255, 255);
+}
+
+/* SECTION PRESENTATION ------------------------------------------------ */
+.carte {
+    width : 60vw;
+}
+
+.photo_licencie {
+    width : 45vw;
+    height : 200px;
+   
+}
+
+
+/* forum------------------------------- */
+.carte_forum {
+    width : 65vw;
+   
+}

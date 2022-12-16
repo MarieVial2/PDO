@@ -25,17 +25,23 @@ try {
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
+
+
+if (!empty($_SESSION)) {
+$id = $_SESSION['id'];
+    
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=omnisport;port=3306', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sth3 = $pdo->prepare("SELECT * FROM licencie WHERE $_SESSION[id] = id_licencie");
+
+    $sth3 = $pdo->prepare("SELECT * FROM licencie WHERE $id = id_licencie");
     $sth3->execute();
     $tableau3 = $sth3->fetchAll();
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
-
+}
 ?>
 
 

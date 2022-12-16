@@ -22,13 +22,17 @@ if ($login == $tableau[0]['email']) {
         $_SESSION['id'] = $tableau[0]['id_licencie'];
         header('location: index.php');
     } else {
-        $_SESSION['logged'] = false;
+        // $_SESSION['logged'] = false;
+        unset($_SESSION['logged']);
+        session_destroy();
         $_SESSION['message'] = "Mot de passe incorrect";
         header('location: connexion.php');
     }
 
 } else {
-    $_SESSION['logged'] = false;
+    // $_SESSION['logged'] = false;
+    unset($_SESSION['logged']);
+    session_destroy();
     $_SESSION['message'] = "Email incorrect";
     header('location: connexion.php');
 }

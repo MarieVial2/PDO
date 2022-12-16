@@ -4,7 +4,10 @@ include('assets/header.php');
 
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["photoToUpload"]["name"]);
+$target_name = str_replace(" ", "_", basename($_FILES["photoToUpload"]["name"]));
+$target_name = str_replace("(", "-", $target_name);
+$target_name = str_replace(")", "-", $target_name);
+$target_file = $target_dir . $target_name;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -56,7 +59,8 @@ if ($_POST) {
     $email = $_POST['email'];
     $age = $_POST['age'];
     $description_licencie = $_POST['description_licencie'];
-    $photo = 'uploads/'. $_FILES['photoToUpload']['name'];
+    // $photo = 'uploads/'. $_FILES['photoToUpload']['name'];
+    $photo = $target_file;
     $password = $_POST['password'];
     $id_section = $_POST['section_id'];
 

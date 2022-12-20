@@ -18,7 +18,7 @@ session_start();
     
    
     <link rel="stylesheet" href="style/style.css">
-     <!-- <link rel="stylesheet" media="screen and (max-width: 1280px) and (min-width: 820px)" href="assets/style-1280.css" /> -->
+     <link rel="stylesheet" media="screen and (min-width: 850px)" href="style/style-850.css" />
     
     <script src="https://kit.fontawesome.com/dcef3565c8.js" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

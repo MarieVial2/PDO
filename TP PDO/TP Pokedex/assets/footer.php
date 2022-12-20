@@ -14,7 +14,11 @@
                 <p><a href="#"><i class="fa-brands fa-facebook"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a></p>
             </div>
         </div>
+        
     </div>
+    <div class="row" id="bandereau">
+            <p id="copyright">Copyright Marie Vial</p>
+        </div>
 </footer>
 
 

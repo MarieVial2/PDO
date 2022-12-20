@@ -1,9 +1,14 @@
 
-
+body {
+    font-family: 'Montserrat';
+}
 footer {
-    height : 25vh;
-    background-color: rgb(255, 43, 51);
+    height : 400px;
+    background-color: #DC3545;
     color: white;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 footer a {
@@ -18,7 +23,7 @@ footer h4{
     margin-top : 40px;
 }
 
-footer .copyright {
+ #copyright {
     color: white;
     text-align: center;
 
@@ -32,3 +37,48 @@ footer i {
     margin : 10px;
     font-size: 25px;
 }
+
+#bandereau {
+    background-color: #b32c39;
+    height : 80px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* INDEX------------------------------------ */
+#pokedex-image {
+    background-image: url(../images/pokedex.jpg);
+    background-position: center;
+    background-size: cover;
+    float: left;
+    height : 300px;
+    width : 60vw;
+    margin : 20px;
+}
+
+.index-container p {
+    text-align: justify;
+}
+
+.index-container p::first-letter{
+    font-size: 60px;
+    float: left;
+    margin : 10px;
+} 
+
+.index-container {
+    border: 1px solid rgb(181, 181, 181);
+    padding : 40px;
+    margin : 40px;
+    border-radius: 10px;
+    width : 80vw;
+}
+
+.index-container h3 {
+    text-align: center;
+    margin : 20px;
+}
+

@@ -40,13 +40,13 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link"  href="#">Accueil</a>
+          <a class="nav-link"  href="index.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Les pokémons</a>
+          <a class="nav-link" href="pokemon.php">Les pokémons</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Se connecter</a>
+          <a class="nav-link" href="connexion.php">Se connecter</a>
         </li>
     
       </ul>

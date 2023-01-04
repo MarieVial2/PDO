@@ -1,0 +1,23 @@
+p {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%,-50%); */
+  font-size: 120px;
+  font-weight: 700;
+  color: grey;
+  
+}
+
+p:before {
+    content: 'Essaitexte';
+  color: black;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition: 0.9s;
+}
+
+p:hover:before{
+    width: 100%;
+  }

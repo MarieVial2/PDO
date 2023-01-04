@@ -1,0 +1,15 @@
+INSERT INTO `categorie` (nom_categorie, couleur_categorie)
+VALUES
+('Imagination', 'rgb(32, 201, 239)'),
+('Jeux de société', 'rgb(30, 201, 27)'),
+('Construction', 'rgb(201, 27, 27)'),
+('Eveil', 'rgb(53, 27, 201)')
+
+
+
+INSERT INTO `tranche_age` (valeur_tranche)
+VALUES
+('0-5 ans'),
+('6-9 ans'),
+('10-12 ans'),
+('13-15 ans')

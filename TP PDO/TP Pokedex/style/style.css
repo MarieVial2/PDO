@@ -2,6 +2,30 @@
 body {
     font-family: 'Montserrat';
 }
+
+#navbarNav div p  {
+    padding: 8px;
+    font-size : 12px;
+    /* display: flex; */
+    margin-bottom : 0;
+}
+
+
+
+#avatar {
+    height : 40px;
+    width : 40px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* #navbarNav {
+    display: flex;
+    justify-content: space-between;
+} */
+
+
 footer {
     height : 400px;
     background-color: #DC3545;
@@ -112,6 +136,7 @@ form textarea{
 
 .form-container h3 {
     text-align: center;
+
 }
 
 
@@ -130,4 +155,19 @@ form textarea{
 
 .row-bouton button {
     margin : 20px;
+}
+
+#icone-pokemon {
+    height :60px;
+    width : 60px;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.image-pokemon {
+    height : 300px;
+    width : 90%;
+    background-position: center;
+    background-size: cover;
 }

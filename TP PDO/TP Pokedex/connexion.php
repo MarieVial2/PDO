@@ -17,11 +17,17 @@ include('assets/header.php');
                 <p><?=$_SESSION['message']?>
                 </p>
                 <?php
-            }
+            
             unset($_SESSION['message']);
-            unset( $_SESSION['logged']);
-
+            
+            if (isset($_SESSION['logged'])) {
+                unset( $_SESSION['logged']);
+                
+            }
             session_destroy();
+        }
+        
+            
                 ?>
                 <a href="inscription.php">Nouveau membre ?</a>
                 <label for="pseudo">Pseudo :</label>

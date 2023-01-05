@@ -7,7 +7,7 @@ try {
     $pdo = new PDO('mysql:host=localhost;dbname=pokedex;port=3306', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sth = $pdo->prepare("SELECT * FROM utilisateur WHERE '$pseudo' = pseudo");
+    $sth = $pdo->prepare("SELECT * FROM utilisateur WHERE '$pseudo' = `pseudo`");
     $sth->execute();
     $tableau = $sth->fetchAll();
 } catch (PDOException $e) {
@@ -22,19 +22,20 @@ if ($pseudo == $tableau[0]['pseudo']) {
         header('location: index.php');
     } else {
         // $_SESSION['logged'] = false;
-        unset($_SESSION['logged']);
-        session_destroy();
+        // unset($_SESSION['logged']);
+        // session_destroy();
         $_SESSION['message'] = "Mot de passe incorrect";
         header('location: connexion.php');
     }
 
 } else {
     // $_SESSION['logged'] = false;
-    unset($_SESSION['logged']);
-    session_destroy();
-    $_SESSION['message'] = "Email incorrect";
+    // unset($_SESSION['logged']);
+    // session_destroy();
+    $_SESSION['message'] = "Pseudo incorrect";
     header('location: connexion.php');
 }
+
 
 
 

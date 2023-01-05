@@ -75,7 +75,7 @@ if ($_POST) {
 
 
 
-
+header('location: ../connexion.php');
 
 include('../assets/footer.php');
 

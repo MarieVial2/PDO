@@ -1,7 +1,16 @@
 <?php
 
 include('assets/header.php');
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=pokedex;port=3306', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $sth = $pdo->prepare("SELECT * FROM `type`");
+    $sth->execute();
+    $tableau = $sth->fetchAll();
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
+}
 ?>
 
 
@@ -30,7 +39,26 @@ include('assets/header.php');
 
                 <label for="photoToUpload">Image :</label>
                 <input type="file" name="photoToUpload" id="photoToUpload">
+                
+                <label for="type1">Type 1 :</label>
+                <select name="type1" id="type1">
+                        <option value=""> --Choisissez un type--</option>
+                        <?php foreach ($tableau as $cle => $valeur) { ?>
+                        <option value="<?=$valeur['id_type']?>"><?=$valeur['nom_type']?></option>
+                        <?php
+                        }
+                        ?>
+                </select>
 
+                <label for="type2">Type 2 :</label>
+                <select name="type2" id="type2">
+                        <option value=""> --Choisissez un type--</option>
+                        <?php foreach ($tableau as $cle => $valeur) { ?>
+                        <option value="<?=$valeur['id_type']?>"><?=$valeur['nom_type']?></option>
+                        <?php
+                        }
+                        ?>
+                </select>
 
                 <input type="submit" value="Envoyer">
 

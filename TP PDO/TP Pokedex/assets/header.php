@@ -1,6 +1,20 @@
 <?php
 
 session_start();
+if (isset($_SESSION['id'])){
+try {
+  $pdo = new PDO('mysql:host=localhost;dbname=pokedex;port=3306', 'root', '');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $sth = $pdo->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = $_SESSION[id]");
+  $sth->execute();
+  $tableau = $sth->fetchAll();
+} catch (PDOException $e) {
+  echo "Erreur : " . $e->getMessage();
+}
+}
+
+mb_internal_encoding('UTF-8');
 ?>
 
 <html lang="en">
@@ -9,7 +23,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +51,8 @@ session_start();
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse d-md-inline-flex justify-content-between" id="navbarNav">
+      
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link"  href="index.php">Accueil</a>
@@ -48,8 +63,14 @@ session_start();
         <li class="nav-item">
           <a class="nav-link" href="connexion.php">Se connecter</a>
         </li>
-    
-      </ul>
+        </ul>
+    <?php if (isset ($_SESSION['logged'])){
+      ?>
+      <div id="message_connexion" class="d-md-inline-flex"><p>  Connecté.e en tant que
+        <?=$tableau[0]['pseudo']?></p> <div id="avatar" style="background-image : url('<?=$tableau[0]['avatar']?>')"></div> </div> 
+      <?php
+      }
+      ?>
     </div>
   </div>
 </nav>
